@@ -1,0 +1,247 @@
+%=============================================================
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%=============================================================
+%
+% 						COMMANDS
+%
+%=============================================================
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%=============================================================
+
+
+%=============================================================
+% Renewing the chapter command
+%=============================================================
+
+\let\oldchapter\chapter
+\renewcommand{\chapter}[1]{%
+    \oldchapter{#1}%
+%
+    \thispagestyle{empty}%
+}
+
+%=============================================================
+% Renewing the printindex command
+%=============================================================
+
+\let\oldprintindex\printindex
+\renewcommand{\printindex}{%
+    \renewcommand{\chapter}[1]{\oldchapter{##1}}
+    
+    \oldprintindex
+    
+    \renewcommand{\chapter}[1]{%
+        \oldchapter{##1}%
+%
+        \thispagestyle{empty}%
+    }
+}
+
+%=============================================================
+% Song and chapter import commands
+%=============================================================
+\newcommand{\includechapter}[1]{\include{chapters/#1}}
+
+\newcommand{\inputsong}[1]{\input{songs/#1}}
+
+\newcommand{\inputnotes}[1]{\input{notes/#1}}
+
+\newcommand{\inputextra}[1]{\input{extra/#1}}
+
+
+%=============================================================
+% Image placing commands
+%=============================================================
+
+\newcommand{\fullpic}[1]{\vspace*{\fill}\begin{center}\includegraphics[width=\linewidth]{#1}\end{center}\vspace*{\fill}}%
+
+
+% Command used to remove the 'pt' part of point values
+\makeatletter\def\strippt{\strip@pt}\makeatother
+\newsavebox{\Image}
+
+\newlength{\ImageH}
+\newlength{\ImageW}
+\newlength{\dx}
+\newlength{\dy}
+
+\newcommand{\pic}[4]{%
+%
+% #1 = dx
+% #2 = dy
+% #3 = image width (for includegraphics)
+% #4 = image path
+%
+%	ex:		\pic{10pt}{-10mm}{50cm}{test.png}
+%
+% Reading the image
+	\savebox{\Image}{\includegraphics[width=#3]{#4}}
+% Getting the width and height of the image
+	\settowidth{\ImageW}{\usebox{\Image}}
+	\settoheight{\ImageH}{\usebox{\Image}}
+% Converting the deltas to 'pt' units
+	\setlength{\dx}{#1}
+	\setlength{\dy}{#2}	
+% Setting the unitlenght to 1pt, to only use 'pt' units
+	\setlength{\unitlength}{1pt}
+	\noindent
+% When using the different values, strip them of the 'pt' part, to only use the value
+	\begin{picture}(0, 0)%(\strippt\ImageW, \strippt\ImageH)
+		\put(\strippt\dx, \strippt\dy){\usebox{\Image}}
+	\end{picture}
+% The picture takes a bit of vertical space, so we adjust it a litte bit back
+	\vspace{-.77cm} % the value is carefully measured to be just correct, DON'T CHANGE IT!!
+}
+
+
+%=============================================================
+% Special headings (Helan, Halvan, Tersen, etc.) commands
+%=============================================================
+\newcommand{\heading}[1]{\begin{LARGE}\scshape{\textbf{#1}}\end{LARGE}\vspace{.5cm}}
+
+
+
+%=============================================================
+% Song author details
+%=============================================================
+
+% Redefine the cite commands, to be without the italic font
+\DeclareFieldFormat*{citetitle}{#1}
+\DeclareFieldFormat*{citeauthor}{#1}
+
+\newcommand{\songtext}[1]{%
+		\begin{footnotesize}
+			\textit{Text:} #1
+		\end{footnotesize}
+	}%
+\newcommand{\original}[1]{%
+		\begin{footnotesize}
+			\textit{Melodi:} #1
+		\end{footnotesize}
+	}%
+\newcommand{\musik}[1]{%
+		\begin{footnotesize}
+			\textit{Musik:} #1
+		\end{footnotesize}
+	}%
+	
+	
+% Command used by the old Note-sheets
+\newcommand{\kompos}[1]{%
+		\textit{#1}
+	}%
+	
+
+
+%=============================================================
+% Verse counter command
+%	(should get zeroed every time a song is created)
+%=============================================================
+
+\newcounter{versenumber}
+\setcounter{versenumber}{1}
+\newcommand{\showversenumber}{%
+	\makebox[0pt][r]{\arabic{versenumber}.\hskip 5pt}%
+	\addtocounter{versenumber}{1}%
+}%
+	
+	
+	
+%=============================================================
+% Remove "Kapitel X" from upper corner
+%=============================================================
+
+\renewcommand{\chaptermark}[1]{\markboth{\scshape{#1}}{}}
+
+
+%=============================================================
+% For adding a phrase to the index. Make sure the phrase fits
+% 	on one line.
+%=============================================================
+\newcommand{\addsongnametoindex}[1]{\index{#1}}
+\newcommand{\addphrasetoindex}[1]{\index{\emph{#1}}}
+
+
+%=============================================================
+% Start a new double page, with text on the left.
+%=============================================================
+\newcommand*\newdoublepage{%
+  \newpage
+  \ifodd\value{page}\hbox{}\newpage\fi
+}
+
+
+%=============================================================
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%=============================================================
+%
+% 						ENVIRONMENTS
+%
+%=============================================================
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%=============================================================
+
+
+
+%=============================================================
+% Used to indicate repeat of a line of text in the song
+%=============================================================
+\newcommand{\repetitionbegin}{/:}
+\newcommand{\repetitionend}{:/}
+\ExplSyntaxOn
+\NewDocumentEnvironment{repetition}{o}%
+{%
+	\repetitionbegin{}
+}%
+{%
+	\repetitionend{}\IfValueT{#1}{\,x#1}
+}%
+\ExplSyntaxOff
+
+
+
+%=============================================================
+% Used to create a new Song
+%	Arguments
+%	-m	Song Title
+%=============================================================
+\ExplSyntaxOn
+\NewDocumentEnvironment{song}{m o}%
+{%
+% Sets the verse counter to 1 whenever the song environment is used.
+\setcounter{versenumber}{1}
+% Adds the title to the table of contents
+	\IfValueTF{#2}{%
+		\phantomsection\label{#2}
+	}{%
+		\phantomsection\label{#1}\addcontentsline{toc}{section}{#1}\index{#1}
+	}
+\begin{large}
+	\textbf{\scshape{#1}}
+\end{large}
+}%
+{\vspace{.8cm}}%
+\ExplSyntaxOff
+
+
+
+
+%=============================================================
+% Environment for aligning tables containing song
+% instructions
+%=============================================================
+\ExplSyntaxOn
+\NewDocumentEnvironment{alternatinglyrics}{o}%
+{%
+    \hspace{-.2cm}
+    \IfValueTF{#1}{%
+        \begin{tabular}{l l l}
+    }{%
+        \begin{tabular}{l l}
+    }%
+}%
+{%
+\end{tabular}%
+}%
+\ExplSyntaxOff
+

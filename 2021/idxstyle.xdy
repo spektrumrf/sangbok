@@ -1,0 +1,31 @@
+;;================================================================================
+;; Style sheet for the index. Run with "xindy".
+;;
+;; 		Fills in the empty space between song title and page number with dots
+;;================================================================================
+
+
+;;--------------------------------------------------------------------------------
+;; Doesn't seem to have any effect on the output...
+;;--------------------------------------------------------------------------------
+;;(require "makeindex.xdy")
+
+
+;;--------------------------------------------------------------------------------
+;; Manipulates each index entry line
+;;
+;;		markup-locclass-list	-	A list of all references separated by ':sep'
+;;		markup-indexentry		-	The whole line of each index entry
+;;--------------------------------------------------------------------------------
+(markup-locclass-list	:open "\dotfill" 	:sep "" :close "")
+(markup-indexentry		:open "~n	\item " 		:close "" :depth 0)
+
+
+;;--------------------------------------------------------------------------------
+;; This line could be used to add hyperlinks around the whole line.
+;; It needs some custom handling of the .ind file though...
+;;
+;; 		for more info, see:
+;;		http://www.phy.ntnu.edu.tw/demolab/html.php?html=doc/xindy/manual-3
+;;--------------------------------------------------------------------------------
+;;(markup-keyword			:open "" 			:close "" 			:depth 0)

@@ -1,0 +1,193 @@
+\begin{music}%
+	\resetlayout%
+	\resetlyrics%
+	\smallmusicsize%
+	\def\writebarno{\llap{\tiny\the\barno\barnoadd}}%
+	\def\raisebarno{3.7\internote}%
+	\def\shiftbarno{1.7\Interligne}%
+	\staffbotmarg=4\Interligne%
+	\stafftopmarg=7\Interligne%
+	\interinstrument=5\Interligne%
+	\footnotesize\setlyrstrut%
+	\lyrraise1{b0mm}%
+	\setlyrics{damer1}{%
+		När su-pen run-nit hä-dan och ma-ten lagts där-på\rlap{,}
+		och kaf-fet står på bor-det vad vän-tar vi då på\rlap{?}
+	}%
+	\setlyrics{damer2}{%
+		\phantom{Ja} den föll oss i sma-ken\rlap{,} nu ro-par vi gu-tår\rlap{,}
+		och kop-pen står där na-ken och vän-tar på på-tår\rlap{.}
+	}%
+	\setlyrics{damer3}{%
+		Jo\rlap{,} punsch\rlap{,} jo punsch\rlap{,} jo al-la sor-ters punsch
+		jo\rlap{,} punsch\rlap{,} jo punsch\rlap{,} jo
+		% volta 1
+		al-la sor-ters punsch\rlap{.} Ja\rlap{,}
+		% volta 2
+		al-la sor-ters punsch\rlap{.}
+	}%
+	\setlyrics{herrar}{%
+		Punsch\rlap{,} punsch\rlap{,} punsch\rlap{,} punsch\rlap{,} %
+		% volta 1
+		punsch\rlap{,} punsch\rlap{,} al-la sor-ters %
+		% volta 2
+		punsch\rlap{,} punsch\rlap{,} al-la sor-ters %
+		punsch\rlap{,} punsch\rlap{,} punsch\rlap{,} punsch\rlap{,} %
+		punsch\rlap{,} punsch\rlap{,} al-la sor-ters %
+		punsch\rlap{,} punsch\rlap{,} punsch\rlap{,} punsch\rlap{,} %
+		punsch\rlap{,} punsch\rlap{,} al-la sor-ters %
+		punsch\rlap{,} punsch\rlap{,} punsch\rlap{,} punsch\rlap{,} %
+		punsch\rlap{,} punsch\rlap{,} al-la sor-ters %
+		punsch\rlap{,} punsch\rlap{,} punsch\rlap{,} punsch\rlap{,} %
+		% volta 1
+		punsch\rlap{,} punsch\rlap{,} al-la sor-ters %
+		% volta 2
+		punsch\rlap{,} punsch\rlap{,} al-la sor-ters punsch\rlap{.}%
+	}%
+	\assignlyrics1{herrar}%
+	\assignlyrics2{damer1,damer2}%
+	\generalmeter{\meterC}%
+	\generalsignature{1}%
+	\instrumentnumber2%
+	\parindent=10.5mm%
+	\setname1{Herrar}%
+	\setname2{Damer}%
+	\songtop2%
+	\songbottom1%
+	\sepbarrules%
+	\mulooseness=1%
+	%
+	%
+	%
+	\startpiece%
+	\systemnumbers%
+	%
+	% Punsch, punsch, ...
+	\NOTes%
+	\icresc\qsk\qa{gdgd}&%
+	\enotes%
+	\def\atnextbar{\znotes&\centerpause\enotes}%
+	\setvoltabox1%
+	\bar%
+	%
+	% punsch, punsch, alla sorters ... (volta 1)
+	\NOTes%
+	\qa h\qa d&%
+	\enotes%
+	\def\atnextbar{\znotes&\centerpause\enotes}%
+	\notes%
+	\ibu0g{-1}\qb0g\qb0d\qb0e\tbu0\qb0f%
+	\enotes%
+	\setvolta2\setendvolta%
+	\rightrepeat
+	%
+	% punsch, punsch, alla sorters ... (volta 2)
+	\NOTes%
+	\qa h\qa d&%
+	\hsk\hpause\enotes%
+	\addspace{-\afterruleskip}%
+	\notes%
+	\ibu0g{-1}\qb0g\qb0d\qb0e\tbu0\qb0f&%
+	\qp\sk\ds\ca d%
+	\enotes%
+	%
+	% supen runnit ...
+	\leftrepeat%
+	\Notes\qa g&\ibu0g0\qbp0g\enotes%
+	\notesp\sk&\tbbu0\tbu0\qb0g\enotes%
+	\Notes\qa d\sk&\ibu0g4\qb0g\tbu0\qb0i\enotes%
+	\addspace{-0.5\afterruleskip}%
+	\NOtes\qa g&\qa g\enotes%
+	\Notes\qa d&\ibu0g4\qb0g\tbu0\qb0i\enotes%
+	\addspace{-0.5\afterruleskip}%
+	\alaligne%
+	%
+	% maten lagts ...
+	\Notes\qa h&\ibu0h{-2}\qbp0h\enotes%
+	\notesp\sk&\tbbu0\tbu0\qb0g\enotes%
+	\Notes\qa d\sk&\ibu0h2\qb0h\tbu0\qb0i\enotes%
+	\notes%
+	\ibu0g{-1}\qb0g\qb0d\qb0e\tbu0\qb0f&%
+	\qa g\sk\ds\ca d%
+	\enotes%
+	\bar%
+	%
+	% kaffet står ...
+	\Notes\qa g&\ibu0g0\qbp0g\enotes%
+	\notesp\sk&\tbbu0\tbu0\qb0g\enotes%
+	\Notes\qa d\sk&\ibu0g4\qb0g\tbu0\qb0i\enotes%
+	\NOtes\qa g&\qa g\enotes%
+	\Notes\qa d&\ibu0g4\qb0g\tbu0\qb0i\enotes%
+	\alaligne%
+	%
+	% väntar vi ...
+	\notesp%
+	\qa h\sk\qa d\sk&%
+	\ibu0h{-2}\qbp0h\tbbu0\tbu0\qb0g\ibu0h2\qb0h\tbu0\qb0i%
+	\enotes%
+	\notes%
+	\ibu0g{-1}\qb0g\qb0d\qb0e\tbu0\qb0f&%
+	\qa g\sk\ds%
+	\assignlyrics2{damer3}%
+	\ca k%
+	\enotes%
+	\bar%
+	%
+	% punsch, jo ...
+	\Notes\qa g\qa d&\qa i\ds\ca k\enotes%
+	\Notes\qa g\qa d&\qa i\ds\ca k\enotes%
+	\addspace{-\afterruleskip}%
+	%
+	\interinstrument=3\Interligne%
+	%
+	\alaligne%
+	% alla sorters ...
+	\notesp\qa h&\ibl0j{-2}\qbp0j\enotes%
+	\notesp\sk&\tbbl0\tbl0\qb0i\enotes%
+	\notes\qa d\sk&\ibl0j2\qb0j\tbl0\qb0k\enotes%
+	\notes%
+	\ibu0g{-1}\qb0g\qb0d\qb0e\tbu0\qb0f&%
+	\qa i\sk\ds\ca k%
+	\enotes%
+	\bar%
+	%
+	% punsch, jo ...
+	\Notes\qa g\qa d&\qa i\ds\ca k\enotes%
+	\Notes\qa g\qa d&\qa i\ds\ca k\enotes%
+	\addspace{-\afterruleskip}%
+	\setvoltabox{1}%
+	\alaligne%
+	%
+	% alla sorters ... (volta 1)
+	\notesp\qa h&\ibl0j{-2}\qbp0j\enotes%
+	\notes&\tbbl0\tbl0\qb0i\enotes%
+	\Notes\qa d&\ibl0j2\qb0j\tbl0\qb0k\enotes%
+	\notes%
+	\ibu0g{-1}\qb0g\qb0d\qb0e\tbu0\qb0f&%
+	\qa i\sk\ds\ca d%
+	\enotes%
+	\setrightrepeat%
+	\setvolta2\setendvolta%
+	\bar
+	%
+	% alla sorters ... (volta 2)
+	\notesp\qa h&\ibl0j{-2}\qbp0j\enotes%
+	\notes&\tbbl0\tbl0\qb0i\enotes%
+	\Notes\qa d&\ibl0j2\qb0j\tbl0\qb0k\enotes%
+	\notes%
+	\ibu0g{-1}\qb0g\qb0d\qb0e\tbu0\qb0f&%
+	\qa i\sk\qp%
+	\enotes%
+	\bar
+	%
+	% last tone
+	\Notes%
+	\qa g\qp\hp&%
+	\enotes%
+	\def\atnextbar{\znotes&\centerpause\enotes}%
+	\setdoubleBAR
+	\endpiece%
+	%
+	%
+	%
+\end{music}%

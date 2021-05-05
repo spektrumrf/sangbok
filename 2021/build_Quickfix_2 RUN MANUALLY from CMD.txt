@@ -1,0 +1,1 @@
+texindy -L swedish -C utf8 -M C:/Sangbok/2021/idxstyle.xdy C:/Sangbok/2021/sangbok.idx
