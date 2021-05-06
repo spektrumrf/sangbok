@@ -1,4 +1,4 @@
-\documentclass[12pt, a5paper, twoside]{book}
+\documentclass[12pt, twoside]{book}
 
 
 %================================================
@@ -55,7 +55,23 @@
 % Margins
 %--------------------
 
-\usepackage[top=2cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
+
+%--------------------
+% Margins
+%
+% Since book was to be printed as A6 but all image placements in latex are calculated as if the book was A5,
+% I added 10mm to standard A5 height and width (148mm by 210mm), and 0.5cm to all four margins. This leaves 
+% room for 3.53mm trim edges when page is scaled down to A6. Otherwise everything is identical, all images are
+% left in their proper places
+%--------------------
+
+% This one is for printing, larger paper size, bigger margins
+\usepackage[paperwidth=158mm, paperheight=220mm, top=2.5cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+% This is the regular size
+%\usepackage[paperwidth=148mm, paperheight=210mm, top=2cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
+
+
 %\usepackage{fullpage}
 
 
@@ -116,8 +132,6 @@
 
 \usepackage{nicefrac}
 
-
-
 %=================================================
 % Figure handling
 %=================================================
@@ -125,7 +139,6 @@
 \usepackage{wrapfig}
 \usepackage{graphicx}
 \graphicspath{{pics/}}
-
 
 
 %================================================
@@ -199,7 +212,8 @@
 
 \thispagestyle{empty}
 
-\fullpic{logo.png}
+% Logo page, image from pdf with high density rasterisation of an svg
+\includegraphics[page=1, width=\textwidth]{logo}
 
 \newpage
 
