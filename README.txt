@@ -95,3 +95,12 @@ Then run mktexlsr
 then run updmap-sys
 
 ==========================================================================
+
+In 2021 I used Inkscape to create the book's cover design.
+
+I also made an additional TeX file called sangbok_print_wrapper,
+which works as a "frame" into which sangbok.pdf is placed. The wrapper
+is sized 130mm x 178mm (A6 plus 15mm on each side), with 15mm margins
+on all sides. This way sangbok.pdf can be designed how it should look
+when printed, and then placed into the correctly sized frame onto 
+which trim marks are then added (using ex. Acrobat) with a 15mm border.
