@@ -1,0 +1,28 @@
+\documentclass[12pt, twoside]{book}
+
+
+\usepackage{pdfpages}
+
+%--------------------
+% Margins
+%
+% Since book was to be printed as A6 but all image placements in latex are calculated as if the book was A5,
+% I added 30mm to standard A5 height and width (148mm by 210mm), and 1.5cm to all four margins. This leaves 
+% room for crop marks when page is scaled down to A6. Otherwise everything is identical, all images are
+% left in their proper places
+%--------------------
+
+% This one is for printing, larger paper size, bigger margins
+\usepackage[paperwidth=135mm, paperheight=178mm, top=1.5cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
+
+% This is the regular size
+%\usepackage[paperwidth=148mm, paperheight=210mm, top=2cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
+
+\pagenumbering{gobble}
+
+%=================================================
+% Start the document
+%=================================================
+\begin{document}
+\includepdf[pages=-,pagecommand={},width=\textwidth]{sangbok.pdf}
+\end{document}

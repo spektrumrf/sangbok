@@ -11,12 +11,6 @@
 \usepackage{csquotes}
 
 %================================================
-% For easy si units and rotated text
-%================================================
-
-\usepackage{siunitx}
-
-%================================================
 % Adds the bibliographies for referencing authors
 %	and songs. Easier to maintain same author in
 %	multiple files.
@@ -51,25 +45,21 @@
 %================================================
 
 
-%--------------------
-% Margins
-%--------------------
-
 
 %--------------------
 % Margins
 %
 % Since book was to be printed as A6 but all image placements in latex are calculated as if the book was A5,
-% I added 10mm to standard A5 height and width (148mm by 210mm), and 0.5cm to all four margins. This leaves 
-% room for 3.53mm trim edges when page is scaled down to A6. Otherwise everything is identical, all images are
+% I added 30mm to standard A5 height and width (148mm by 210mm), and 1.5cm to all four margins. This leaves 
+% room for crop marks when page is scaled down to A6. Otherwise everything is identical, all images are
 % left in their proper places
 %--------------------
 
 % This one is for printing, larger paper size, bigger margins
-\usepackage[paperwidth=158mm, paperheight=220mm, top=2.5cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+%\usepackage[paperwidth=178mm, paperheight=240mm, top=3.5cm, bottom=3cm, left=3cm, right=3cm]{geometry}
 
 % This is the regular size
-%\usepackage[paperwidth=148mm, paperheight=210mm, top=2cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage[paperwidth=148mm, paperheight=210mm, top=2cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
 
 
 %\usepackage{fullpage}
@@ -131,6 +121,12 @@
 %=================================================
 
 \usepackage{nicefrac}
+
+%================================================
+% For easy si units and rotated text
+%================================================
+
+\usepackage{siunitx}
 
 %=================================================
 % Figure handling
