@@ -93,6 +93,13 @@ In order to send the book to be printed, you need to compile `sangbok.tex`, idea
 
 The specifications of the order can be found in _Instructions for printing_.
 
+### Image upscaling
+Some images were of relatively poor quality. Other images new to the book were hand-drawn, then scanned with a document scanning software as black and white with low-tolerance. These were upscaled using the very simple but effective https://www.maxlaumeister.com/pixel-art-upscaler/ XBR pixel art upscaler software. It works for general line-art images as well as pixel art.
+
+### Sheet music ("notes" folder)
+If you have any respect for your time at all, I would strongly recommend not changing anything in this folder. There is a LaTeX library called MusiXTeX, using which one can write sheet music using latex commands, and it is one of the most obscure, error-prone "programming languages" ever created. My hat is off to whoever created them in the first place.
+If, for any reason, you would like to add more sheet music to the book, my strong recommendation is to create the sheet music in some free notation software like MuseScore, export it as a PDF, possibly on differently-sized page than A4, then use latex commands to insert that pdf file into the page where you would like to have sheet music. This is an order of magnitude less work unless, with a good bit of luck, some Large Language Model happens to be excellent at writing MusiXTeX from a sheet music input.
+
 ### Cover design
 
 In 2021 I used Inkscape to create the book's cover design.
