@@ -1,0 +1,11 @@
+If more of the same books need to be printed, then one does not have to go through compiling the lot again, as the files for that are still available.
+
+Inside the folder "Kommitténs workflow" will be found some work-in-progress files to detail the process as well as two final versions of the song book.
+- sangbok - FINAL.pdf is the finished pdf product, which looks like the one to be printed. However, this is NOT the version that should be sent to print. In order to print something, it needs trim and sometimes bleed marks. Since no page has full-page images, bleed is not necessary, but the trim marks are.
+- sangbok_A6_x1a_trimmarks.pdf is the file which should be sent to print. This file of size A6, with an additional 15mm of page margins on all sides, and with trim marks added 15mm from the edges on all corners. It also contains some other useful stuff for the printer's. It is also in format pdf_x1a, which was required last time.
+
+In order to add trim marks and convert a pdf into the correct color format (x1a), one needs some special software. There may be some available online, but the recommended software is Adobe InDesign (expensive) or Adobe Acrobat (not Acrobat Reader, which is free). I used Acrobat, as I "happeded" upon it.
+
+For the hardcover design, look inside the "Hardcover design 2021" folder, for the file "cover_withoutbleed.pdf". This was made in inkscape, an image editing software which supports vector graphics. This could of course be changes rather easily for a new print, but remember to use the file "06-3515_Cover_lay.pdf" as a guideline for where the folds will be at. The millimeter placements of everything is extremely important. When I created this the first time, I drew some lines and placed them by inputting their position in millimeters manually, then centered the logo and text manually (calcuating their position relative to the folds) and finally removing the fold lines. The file "Cover_inkscape.svg" may still have the guide-lines in place.
+
+When printing in 2021, several companies were approached, but we settled on Printon Trükikoda in Tallinn, as was done in 2015 as well. We ordered 150 pieces, which cost 834€ = 5.56€ per book.
