@@ -19,3 +19,4 @@ however I spent an exorbitant amount of time figuring
 out why it didn't work, and then gave up.
 
 If clean_build works for you (as it probably will on Linux), ignore this folder.
+If you need to use this, make sure you edit the paths, especially in build_Quickfix_2.
