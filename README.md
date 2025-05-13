@@ -9,12 +9,6 @@ LaTex
 
 On windows you'll need some sort of bash terminal too (GIT bash is fine)
 
-### 2021,
-For low quality images I found a browser version of the xbr smooth 
-scaling algorithm, worked wonders. I used [this one](https://www.maxlaumeister.com/pixel-art-upscaler/)
-Also, I used the app Camscanner to get a perfect white background on
-drawn images. Worked perfectly.
-
 # WINDOWS
 
 Install TexLive (full or atleast with xindy)
@@ -93,8 +87,10 @@ In order to send the book to be printed, you need to compile `sangbok.tex`, idea
 
 The specifications of the order can be found in _Instructions for printing_.
 
-### Image upscaling
-Some images were of relatively poor quality. Other images new to the book were hand-drawn, then scanned with a document scanning software as black and white with low-tolerance. These were upscaled using the very simple but effective https://www.maxlaumeister.com/pixel-art-upscaler/ XBR pixel art upscaler software. It works for general line-art images as well as pixel art.
+### Adding images
+For low quality images I found a browser version of the xbr smooth scaling algorithm, worked wonders. I used [this one](https://www.maxlaumeister.com/pixel-art-upscaler/)
+Also, I used the app Camscanner to get a perfect white background on drawn images. Worked perfectly.
+
 
 ### Sheet music ("notes" folder)
 If you have any respect for your time at all, I would strongly recommend not changing anything in this folder. There is a LaTeX library called MusiXTeX, using which one can write sheet music using latex commands, and it is one of the most obscure, error-prone "programming languages" ever created. My hat is off to whoever created them in the first place.
