@@ -1,13 +1,25 @@
 # TOOLS NEEDED
 
-LaTex
- - TexLive	Tex compiler software (has support for Xindy)
- - pdflatex	Compile into pdf files
- - xindy	Index compilation
- - biber	Bibliography registers
+- LaTex
+- TexLive	Tex compiler software (has support for Xindy)
+- pdflatex	Compile into pdf files
+- xindy	Index compilation
+- biber	Bibliography registers
 
+On windows you'll need some sort of bash terminal too (GIT bash is fine), and hopefully some base understanding of shell commands. 
+Oh, and good familiarity with LaTeX. This project is composed of numerous TeX modules.
 
-On windows you'll need some sort of bash terminal too (GIT bash is fine)
+sangbok.tex is the finished song book (note: without print margins, see more instructions for printing in the folder with that name).
+sangbok.tex contains the "chapters" in the specified order. Each chaper is its own .tex file, found in /chapters.
+each <chapter>.tex contains some newpage markers and a set of songs. Here is also where the exact placement of pictures on the page happens. Note: to see how and whether something will fit on a page the way you want, you'll need to compile the whole thing and look at it. For exact picture placements this is fairly time-intensive.
+Every song has it's own .tex file.
+The credits page is it's own chapter, and will likely be edited along with a new version in the future.
+
+Page numbering, table of contents (at the end) are handled automatically. Authors/composers/lyricists/original melody are handled automatically by referencing them. Files with references are found in /bibs.
+
+If editing this project (making a new version of the book), I highly recommend copying the contents of the folder "2021" into a separate folder, and begin your work there, so as to not overwrite anything and keep this version for posterity.
+Whoever is to work with this code in the future, with the responsibility of creating the new book will by necessity need to aquaint themselves with how this whole thing works. I do not believe there is much more that needs to be said than is written in the different READMEs, but it is well worth the time to look through everything in detail to understand where changes should be made and especially where they should *not* be made.
+If there are any questions, you may reach out to Robin McCann, RGL (robinmccann98@gmail.com), who edited and compiled this abomination in 2021.
 
 # WINDOWS
 
